@@ -4,36 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Uzma Jamil Khan - Portfolio</title>
+
+  <!-- Google Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset & Base */
+    /* Base Reset & Styling */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background: #F7F6F2; /* Light Cream background */
+      color: #333; /* Dark text for readability */
       line-height: 1.6;
-      background-color: #f0f2f5;
-      color: #333;
+      scroll-behavior: smooth;
+      position: relative;
+      animation: fadeIn 1s ease-out;
     }
 
     /* Header */
     header {
-      background: linear-gradient(to right, #2c3e50, #34495e);
+      background: linear-gradient(to right, #2A3D66, #D8B56D); /* Rich Navy Blue to Soft Gold gradient */
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
+      border-bottom: 10px solid #D8B56D; /* Soft Gold border */
+      animation: slideDown 1s ease-out;
     }
+
     header h1 {
-      font-size: 3em;
+      font-size: 3.5em;
+      font-weight: 700;
+      color: #f8f8f8; /* Light color for title */
+      animation: fadeInUp 1s ease-out;
     }
+
     header h2 {
       font-weight: 300;
       margin-top: 10px;
+      font-size: 1.5em;
+      color: #f0f0f0; /* Light gray for subtitle */
+      animation: fadeInUp 1.2s ease-out;
     }
 
-    /* Main Container */
+    header p {
+      font-size: 1.2em;
+      margin-top: 15px;
+      color: #e0e0e0; /* Light gray text */
+      animation: fadeInUp 1.4s ease-out;
+    }
+
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -41,52 +65,141 @@
     }
 
     section {
-      background: white;
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: #ffffff; /* Clean white background for sections */
+      padding: 30px;
       margin-bottom: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
     }
 
     h3 {
+      color: #2A3D66; /* Rich Navy Blue for section headers */
       margin-bottom: 15px;
-      font-size: 1.5em;
-      color: #2c3e50;
-      border-bottom: 2px solid #2c3e50;
+      border-bottom: 2px solid #D8B56D; /* Soft Gold border */
       padding-bottom: 5px;
+      font-size: 1.8em;
+      font-weight: 500;
     }
 
     ul li {
       margin-bottom: 10px;
+      font-size: 1.1em;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    ul li:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    ul li:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    ul li:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    ul li:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    ul li:nth-child(5) {
+      animation-delay: 1s;
     }
 
     a {
-      color: #2980b9;
+      color: #D8B56D; /* Soft Gold color for links */
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      font-weight: 500;
     }
 
     a:hover {
+      color: #B88D50; /* Darker Gold on hover */
       text-decoration: underline;
-      color: #1c5980;
     }
 
-    /* Footer */
+    /* Profile Image Styling */
+    #profile-pic {
+      position: absolute;
+      top: 55px;
+      right: 30px;
+      max-width: 375px;
+      border-radius: 50%;
+      border: 5px solid #2A3D66; /* Border matching the header color */
+      transition: transform 0.3s ease;
+      animation: zoomIn 1s ease-out;
+    }
+
+    #profile-pic:hover {
+      transform: scale(2.2);
+    }
+
     footer {
       text-align: center;
-      padding: 15px;
-      background-color: #dfe6e9;
-      color: #636e72;
-      font-size: 0.9em;
+      background: #f8f8f8; /* Light gray footer */
+      padding: 20px;
+      font-size: 1em;
+      color: #2A3D66; /* Rich Navy Blue for footer text */
+      margin-top: 50px;
     }
 
-    /* Responsive */
+    /* Fade-in animation for sections */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Media Query for smaller screens */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
       }
       header h2 {
-        font-size: 1.1em;
+        font-size: 1.3em;
+      }
+      header p {
+        font-size: 1em;
       }
     }
   </style>
@@ -96,25 +209,42 @@
   <header>
     <h1>Uzma Jamil Khan</h1>
     <h2>Computer Science Graduate & Aspiring Software Developer</h2>
-    <p>Passionate about building software solutions that solve real-world problems.</p>
+    <p>Building innovative solutions with code and creativity.</p>
+    <img id="profile-pic" src="file:///C:/Users/kuzma/OneDrive/Desktop/My_Portfolio/Uzma_Khan.jpeg" alt="Profile Photo">
   </header>
 
   <main>
+    <!-- About -->
     <section id="about">
       <h3>About Me</h3>
-      <p>I recently graduated with a BSc in Computer Science. I enjoy coding, learning new technologies, and working on practical projects that help people and businesses.</p>
-      <p><strong>Skills:</strong> Python, Java, HTML, CSS, JavaScript, SQL, Git, Object-Oriented Programming</p>
+      <p>Hi, I'm Uzma Jamil Khan, a Computer Science graduate with a passion for web development and problem-solving. I’ve always been curious about how things work under the hood, and that curiosity led me to programming. Over the years, I’ve gained experience building projects that solve real-world problems and help others.</p>
+      <p>I love learning new technologies and constantly challenge myself to build better, more efficient solutions. I believe that technology can have a positive impact, and I'm driven to create tools that make life easier for people.</p>
+      <p>When I’m not coding, I enjoy experimenting with new frameworks, reading about tech trends, and improving my skills by working on personal projects and collaborating with others.</p>
     </section>
 
-    <section id="projects">
-      <h3>Projects</h3>
+    <!-- Skills -->
+    <section id="skills">
+      <h3>Skills</h3>
       <ul>
-        <li><strong>Portfolio Website</strong> – A clean, responsive personal website made with HTML & CSS</li>
-        <li><strong>To-Do List App</strong> – A Python Flask app to manage daily tasks</li>
-        <li><strong>Weather Dashboard</strong> – A simple web app that shows live weather using OpenWeatherMap API</li>
+        <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Programming Languages:</strong> Python, Java</li>
+        <li><strong>Database Management:</strong> SQL, MongoDB, DBMS</li>
+        <li><strong>Technologies:</strong> AI, Data Science</li>
+        <li><strong>Tools & Frameworks:</strong> Git, Node.js, Express</li>
       </ul>
     </section>
 
+    <!-- Projects -->
+    <section id="projects">
+      <h3>Projects</h3>
+      <ul>
+        <li><strong>Portfolio Website</strong> – Built with HTML & CSS</li>
+        <li><strong>To-Do App</strong> – Made using Python & Flask</li>
+        <li><strong>Weather Dashboard</strong> – Shows weather using an API</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
       <h3>Contact</h3>
       <p>Email: <a href="mailto:uzmak1735@gmail.com">uzmak1735@gmail.com</a></p>
@@ -124,7 +254,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Uzma Jamil Khan. All rights reserved.</p>
+    <p>© 2025 Uzma Jamil Khan</p>
   </footer>
 
 </body>
